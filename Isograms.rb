@@ -12,8 +12,9 @@ end
 
 
 # Best answer from Codewars:
-def is_isogram(string)
-  string.downcase.chars.uniq == string.downcase.chars
-end
+
+# def is_isogram(string)
+#   string.downcase.chars.uniq == string.downcase.chars
+# end
 
 # first time I've got it exactly the same!!
