@@ -13,6 +13,18 @@
 # 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
 #
 
-def gimme(input_array)
+# My answer:
 
+def gimme(input_array)
+  mid = input_array.dup
+  input_array.delete(input_array.max)
+  input_array.delete(input_array.min)
+  return mid.index(input_array[0])
 end
+
+puts gimme([-15, 0, 15])
+
+# Codewars best answer:
+# def gimme(input)
+#   input.index(input.sort[1])
+# end
