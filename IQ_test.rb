@@ -9,5 +9,20 @@
 # iq_test("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
 
 def iq_test(numbers)
-
+  odd = Array.new
+  even = Array.new
+  numbers.split(" ").each_with_index do |n,i|
+    if n.to_i % 2 == 0
+      even << [n,i+1]
+    else
+      odd << [n,i+1]
+    end
+  end
+  if odd.size == 1
+    return odd[0][1]
+  else even.size == 1
+    return even[0][1]
+  end
 end
+
+p iq_test("5 9 11 4 9")
