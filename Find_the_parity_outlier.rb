@@ -9,5 +9,30 @@
 
 # My Answer:
 def find_outlier(int)
-  
+  counter = 0
+  3.times do |i|
+    if int[i].odd?
+      counter += 1
+    end
+  end
+  if counter > 1
+    int.each do |n|
+      return n if n.even?
+    end
+  else
+    int.each do |n|
+      return n if n.odd?
+    end
+  end
 end
+
+puts find_outlier([1,1,1,1,1,2])
+puts find_outlier([2,2,2,5])
+puts find_outlier([1,3,5,7,8])
+
+
+# Best Answer from CodeWars
+
+# def find_outlier(integers)
+#   integers.partition(&:odd?).find(&:one?).first
+# end
