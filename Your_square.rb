@@ -12,8 +12,21 @@
 # is_square  25 # => true
 # is_square  26 # => false
 
+#My answer:
 def is_square(x)
-  return true if Math.sqrt(x) % 1 == 0
+  return false if x < 0
+  if Math.sqrt(x) % 1 == 0
+    return true
+  else
+    return false
+  end
 end
 
-puts is_square(4)
+puts is_square(-1)
+puts is_square(1)
+puts is_square(30)
+
+#Best answer from Codewars:
+# def is_square(x)
+#   x < 0 ? false : Math.sqrt(x) % 1 == 0
+# end
