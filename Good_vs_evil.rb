@@ -33,3 +33,64 @@
 #
 # Output:
 # Return "Battle Result: Good triumphs over Evil" if good wins, "Battle Result: Evil eradicates all trace of Good" if evil wins, or "Battle Result: No victor on this battle field" if it ends in a tie.
+
+#My answer:
+
+def goodVsEvil(good, evil)
+  goodcounter = 0
+  evilcounter = 0
+  good.split(" ").each_with_index do |n,i|
+    case i
+      when 0
+        goodcounter += (n.to_i*1)
+      when 1
+        goodcounter += (n.to_i*2)
+      when 2
+        goodcounter += (n.to_i*3)
+      when 3
+        goodcounter += (n.to_i*3)
+      when 4
+        goodcounter += (n.to_i*4)
+      when 5
+        goodcounter += (n.to_i*10)
+    end
+  end
+  evil.split(" ").each_with_index do |n,i|
+    case i
+      when 0
+        evilcounter += (n.to_i*1)
+      when 1
+        evilcounter += (n.to_i*2)
+      when 2
+        evilcounter += (n.to_i*2)
+      when 3
+        evilcounter += (n.to_i*2)
+      when 4
+        evilcounter += (n.to_i*3)
+      when 5
+        evilcounter += (n.to_i*5)
+      when 6
+        evilcounter += (n.to_i*10)
+    end
+  end
+  if goodcounter > evilcounter
+    return "Battle Result: Good triumphs over Evil"
+  elsif evilcounter > goodcounter
+    return "Battle Result: Evil eradicates all trace of Good"
+  elsif goodcounter == evilcounter
+    return "Battle Result: No victor on this battle field"
+  end
+end
+
+# Codewars Best Answer:
+# def total_worth(counts, worth_table)
+#   counts.split.each_with_index.reduce(0) { |sum, (c, i)| sum + ( worth_table[i] * c.to_i ) }
+# end
+#
+# def goodVsEvil(good, evil)
+#   case total_worth(good, [1,2,3,3,4,10]) <=> total_worth(evil, [1, 2, 2, 2, 3, 5, 10])
+#   when 1 then "Battle Result: Good triumphs over Evil"
+#   when -1 then "Battle Result: Evil eradicates all trace of Good"
+#   when 0 then "Battle Result: No victor on this battle field"
+#   end
+# end
