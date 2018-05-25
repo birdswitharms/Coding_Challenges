@@ -12,6 +12,3 @@ def fib(num)
   end
   return fib_array[-1]
 end
-
-puts fib(10)
-puts fib(24)
